@@ -28,9 +28,15 @@ EOF
 ) > ~/.ssh/authorized_keys
 chmod go-rwx ~/.ssh/authorized_keys
 chmod go-rwx ~/.ssh/
-
 (
 cat <<'EOF'
 export TERM=xterm
 EOF
 ) >> ~/.bashrc
+mkdir -p ~/bin
+(
+cat <<'EOF'
+#!/bin/bash
+git $*EOF
+) >> ~/bin/git-git
+chmod +x ~/bin/git-git
