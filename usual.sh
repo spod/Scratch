@@ -40,3 +40,9 @@ cat <<'EOF'
 git $*EOF
 ) >> ~/bin/git-git
 chmod +x ~/bin/git-git
+(
+cat <<'EOF'
+#! /bin/bash
+git rev-parse --abbrev-ref HEAD
+) >> ~/bin/git-what-branch 
+chmod +x ~/bin/git-what-branch
