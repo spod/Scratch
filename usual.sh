@@ -46,3 +46,9 @@ cat <<'EOF'
 git rev-parse --abbrev-ref HEAD
 ) >> ~/bin/git-what-branch 
 chmod +x ~/bin/git-what-branch
+(
+cat <<'EOF'
+#! /bin/bash
+git for-each-ref --sort='-committerdate' --format='%(refname)%09%(committerdate)' refs/heads | sed -e 's-refs/heads/--'
+) >> ~/bin/git-branch-by-date
+chmod +x ~/bin/git-branch-by-date
