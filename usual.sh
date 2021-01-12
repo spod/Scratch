@@ -33,6 +33,8 @@ chmod go-rwx ~/.ssh/
 (
 cat <<'EOF'
 export TERM=xterm
+# disable ctrl s/q
+stty -ixon
 EOF
 ) >> ~/.bashrc
 mkdir -p ~/bin
